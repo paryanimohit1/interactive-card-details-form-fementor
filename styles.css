@@ -1,28 +1,5 @@
 /*Linear gradient (active input border)*/
 /*Red (input errors)*/
-.colors {
-  position: fixed;
-  right: 2rem;
-  display: flex;
-  gap: 1rem;
-}
-.colors div {
-  width: 5rem;
-  aspect-ratio: 1;
-}
-.colors .one {
-  background: linear-gradient(hsl(249deg, 99%, 64%), hsl(278deg, 94%, 30%));
-}
-.colors .two {
-  background: hsl(270deg, 3%, 87%);
-}
-.colors .three {
-  background: hsl(279deg, 6%, 55%);
-}
-.colors .four {
-  background: hsl(278deg, 68%, 11%);
-}
-
 * {
   margin: 0;
   box-sizing: border-box;
@@ -157,4 +134,36 @@ body .attribution {
 }
 body .attribution a {
   color: hsl(228deg, 45%, 44%);
+}
+body .colors {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  padding: 0.5rem;
+  gap: 0.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid #f9f9f9;
+}
+body .colors:hover div {
+  width: 2rem;
+}
+body .colors div {
+  width: 0.2rem;
+  transform-origin: bottom right;
+  transition: 300ms;
+  aspect-ratio: 1;
+  border-radius: 0.3rem;
+}
+body .colors .one {
+  background: linear-gradient(hsl(249deg, 99%, 64%), hsl(278deg, 94%, 30%));
+}
+body .colors .two {
+  background: hsl(270deg, 3%, 87%);
+}
+body .colors .three {
+  background: hsl(279deg, 6%, 55%);
+}
+body .colors .four {
+  background: hsl(278deg, 68%, 11%);
 }/*# sourceMappingURL=styles.css.map */
