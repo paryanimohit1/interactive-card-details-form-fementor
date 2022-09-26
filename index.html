@@ -1,21 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Interactive card details form</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <title>Frontend Mentor | Interactive card details form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="colors">
+      <div class="one"></div>
+      <div class="two"></div>
+      <div class="three"></div>
+      <div class="four"></div>
+    </div>
+    <div class="left-side">
+      <div class="card-front">
+        <!-- <img
+          src="./images/bg-card-front.png"
+          alt="Card Front"
+          class="card-front"
+        /> -->
+        <img src="./images/card-logo.svg" alt="Card-Logo" class="card-logo" />
+        <p class="card-number-value">9591 6489 6389 1011</p>
+        <span class="cardholder-name-value">FELICIA LEIRE</span>
+        <span class="card-expiry-date-value">09/00</span>
+      </div>
+      <div class="card-back">
+        <!-- <img src="./images/bg-card-back.png" alt="Card Back" class="card-back" /> -->
+        <p class="card-cvc-value">000</p>
+      </div>
+    </div>
+    <div class="right-side">
+      <form>
+        <label for="cardholder-name" class="field-label full-width"
+          >CARDHOLDER NAME</label
+        >
+        <div class="input-wrapper full-width">
+          <input
+            type="text"
+            class="input-field"
+            id="cardholder-name"
+            placeholder="e.g. Jane Appleseed"
+          />
+        </div>
+        <label class="field-label full-width" for="card-number"
+          >CARD NUMBER</label
+        >
+        <div class="input-wrapper full-width">
+          <input
+            type="text"
+            class="input-field full-width"
+            id="card-number"
+            placeholder="e.g. 1234 5678 9123 0000"
+          />
+        </div>
+        <label class="field-label span2" for="exp-month"
+          >EXP. DATE (MM/YY)</label
+        >
+        <label class="field-label cvc-label" for="cvc">CVC</label>
+        <div class="input-wrapper">
+          <input
+            type="number"
+            maxlength="2"
+            minlength="2"
+            min="1"
+            max="12"
+            class="input-field"
+            id="exp-month"
+            placeholder="MM"
+          />
+        </div>
+        <div class="input-wrapper">
+          <input
+            type="number"
+            maxlength="2"
+            minlength="2"
+            class="input-field"
+            placeholder="YY"
+          />
+        </div>
+        <div class="input-wrapper cvc-field">
+          <input
+            type="number"
+            maxlength="3"
+            minlength="3"
+            min="0"
+            class="input-field"
+            id="cvc"
+            placeholder="e.g. 123"
+          />
+        </div>
+        <input
+          type="button"
+          value="Confirm"
+          class="full-width confirm-button"
+        />
+      </form>
+    </div>
+    <!--
   0000 0000 0000 0000
   Jane Appleseed
   00/00
@@ -36,16 +131,20 @@
   e.g. 123
 
   Confirm
-
-  <!-- Completed state start -->
-
+  -->
+    <!-- Completed state start -->
+    <!--
   Thank you!
   We've added your card details
   Continue
   
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+  <p class="attribution">
+    Challenge by
+    <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+    >Frontend Mentor</a
+    >. Coded by
+    <a href="https://github.com/paryanimohit1" target="_blank">Mohit Paryani</a>.
+  </p>
+-->
+  </body>
 </html>
