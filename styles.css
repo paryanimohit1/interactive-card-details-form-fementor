@@ -82,6 +82,12 @@ body .right-side form .input-wrapper {
 body .right-side form .input-wrapper:focus-within {
   background: linear-gradient(hsl(249deg, 99%, 64%), hsl(278deg, 94%, 30%));
 }
+body .right-side form .input-wrapper.invalid {
+  background-color: hsl(0deg, 100%, 66%);
+}
+body .right-side form .input-wrapper .error-label {
+  color: hsl(0deg, 100%, 66%);
+}
 body .right-side form .input-field {
   font-size: 16px;
   border: none;

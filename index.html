@@ -18,6 +18,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+  <script src="./script.js" defer></script>
   </head>
   <body>
     <div class="left-side">
@@ -42,30 +43,34 @@
         <label for="cardholder-name" class="field-label full-width"
           >CARDHOLDER NAME</label
         >
-        <div class="input-wrapper full-width">
+        <div class="input-wrapper full-width" id="cardholder-name-wrapper">
           <input
             type="text"
             class="input-field"
             id="cardholder-name"
             placeholder="e.g. Jane Appleseed"
+            required
           />
+          <span class="error-label" id="cardholder-name-error-label"></span>
         </div>
         <label class="field-label full-width" for="card-number"
           >CARD NUMBER</label
         >
-        <div class="input-wrapper full-width">
+        <div class="input-wrapper full-width" id="card-number-wrapper">
           <input
             type="text"
             class="input-field full-width"
             id="card-number"
             placeholder="e.g. 1234 5678 9123 0000"
+            required
           />
+          <span class="error-label" id="card-number-error-label"></span>
         </div>
         <label class="field-label span2" for="exp-month"
           >EXP. DATE (MM/YY)</label
         >
         <label class="field-label cvc-label" for="cvc">CVC</label>
-        <div class="input-wrapper">
+        <div class="input-wrapper" id="exp-month-wrapper">
           <input
             type="number"
             maxlength="2"
@@ -75,18 +80,22 @@
             class="input-field"
             id="exp-month"
             placeholder="MM"
+            required
           />
+          <span class="error-label" id="exp-month-error-label"></span>
         </div>
-        <div class="input-wrapper">
+        <div class="input-wrapper" id="exp-year-wrapper">
           <input
             type="number"
             maxlength="2"
             minlength="2"
             class="input-field"
             placeholder="YY"
+            id="exp-year"
+            required
           />
         </div>
-        <div class="input-wrapper cvc-field">
+        <div class="input-wrapper cvc-field" id="cvc-wrapper">
           <input
             type="number"
             maxlength="3"
@@ -95,12 +104,15 @@
             class="input-field"
             id="cvc"
             placeholder="e.g. 123"
+            required
           />
+          <span class="error-label" id="cvc-error-label"></span>
         </div>
         <input
           type="button"
           value="Confirm"
           class="full-width confirm-button"
+          onclick="confirmClicked(event)"
         />
       </form>
     </div>
