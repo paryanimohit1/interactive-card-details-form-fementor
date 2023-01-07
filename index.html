@@ -30,8 +30,10 @@
         /> -->
         <img src="./images/card-logo.svg" alt="Card-Logo" class="card-logo" />
         <p class="card-number-value">9591 6489 6389 1011</p>
-        <span class="cardholder-name-value">FELICIA LEIRE</span>
-        <span class="card-expiry-date-value">09/00</span>
+        <span class="cardholder-name-value">CARDHOLDER NAME</span>
+        <p class="card-expiry-date-value">
+          <span class="card-expiry-month-value">09</span>/<span class="card-expiry-year-value">00</span>
+        </p>
       </div>
       <div class="card-back">
         <!-- <img src="./images/bg-card-back.png" alt="Card Back" class="card-back" /> -->
@@ -70,30 +72,33 @@
           >EXP. DATE (MM/YY)</label
         >
         <label class="field-label cvc-label" for="cvc">CVC</label>
-        <div class="input-wrapper" id="exp-month-wrapper">
-          <input
-            type="number"
-            maxlength="2"
-            minlength="2"
-            min="1"
-            max="12"
-            class="input-field"
-            id="exp-month"
-            placeholder="MM"
-            required
-          />
-          <span class="error-label" id="exp-month-error-label"></span>
-        </div>
-        <div class="input-wrapper" id="exp-year-wrapper">
-          <input
-            type="number"
-            maxlength="2"
-            minlength="2"
-            class="input-field"
-            placeholder="YY"
-            id="exp-year"
-            required
-          />
+        <div class="card-month-year-fields-wrapper">
+          <div class="input-wrapper" id="exp-month-wrapper">
+            <input
+              type="number"
+              maxlength="2"
+              minlength="2"
+              min="1"
+              max="12"
+              class="input-field"
+              id="exp-month"
+              placeholder="MM"
+              pattern="[0-9]+"
+              required
+            />
+          </div>
+          <div class="input-wrapper" id="exp-year-wrapper">
+            <input
+              type="number"
+              maxlength="2"
+              minlength="2"
+              class="input-field"
+              placeholder="YY"
+              id="exp-year"
+              required
+            />
+          </div>
+          <span class="error-label exp-month-year-err-label" id="exp-month-year-error-label"></span>
         </div>
         <div class="input-wrapper cvc-field" id="cvc-wrapper">
           <input
