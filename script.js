@@ -35,29 +35,37 @@ let fields = [
     fieldName: "cardHolderName",
     field: [cardHolderNameInput],
     fieldWrapper: [cardHolderNameWrapper],
+    fieldLabel: [cardHolderNameLabel],
     errorLabel: cardHolderNameErrorLabel,
     validationMessage: "Can't be blank",
+    defaultLabelValues: ['CARDHOLDER NAME']
   },
   {
     fieldName: "cardNumber",
     field: [cardNumberInput],
     fieldWrapper: [cardNumberWrapper],
+    fieldLabel: [cardNumberLabel],
     errorLabel: cardNumberErrorLabel,
     validationMessage: "Can't be blank",
+    defaultLabelValues: ['0000 0000 0000 0000']
   },
   {
     fieldName: "cardMonthAndYear",
     field: [expMonthInput, expYearInput],
     fieldWrapper: [expMonthWrapper, expYearWrapper],
+    fieldLabel: [cardExpiryMonthLabel, cardExpiryYearLabel],
     errorLabel: expMonthErrorLabel,
     validationMessage: "Can't be blank",
+    defaultLabelValues: ['00', '00']
   },
   {
     fieldName: "cardCvc",
     field: [cvcInput],
     fieldWrapper: [cvcWrapper],
+    fieldLabel: [cardCvcLabel],
     errorLabel: cvcErrorLabel,
     validationMessage: "Can't be blank",
+    defaultLabelValues: ['000']
   },
 ];
 
@@ -204,6 +212,9 @@ function continueClicked(eve) {
     fieldObject.validationMessage = "Can't be blank";
     fieldObject.field.forEach((element) => {
       element.value = "";
+    });
+    fieldObject.fieldLabel.forEach((element, index) => {
+      element.innerText = fieldObject.defaultLabelValues[index];
     });
   });
 
