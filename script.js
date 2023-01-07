@@ -1,3 +1,7 @@
+// Containers
+const thankYouContainer = document.querySelector(".thank-you-container");
+const cardDetailsForm = document.querySelector("#card-details-form");
+
 // Field Wrappers
 let cardHolderNameWrapper = document.getElementById("cardholder-name-wrapper");
 let cardNumberWrapper = document.getElementById("card-number-wrapper");
@@ -134,8 +138,8 @@ cvcInput.addEventListener("input", (eve) => {
     errField.validationMessage = "Can't be blank";
   } else if (curVal.match(/[a-zA-Z]/gi)) {
     errField.validationMessage = "Wrong format, numbers only";
-  } else if(curVal.length < 3) {
-    errField.validationMessage = "Invalid CVC"
+  } else if (curVal.length < 3) {
+    errField.validationMessage = "Invalid CVC";
   }
 
   if (errField.validationMessage.length) {
@@ -146,7 +150,9 @@ cvcInput.addEventListener("input", (eve) => {
 });
 
 function validateMonthAndYear() {
-  const errField = fields.find(field => field.fieldName === "cardMonthAndYear");
+  const errField = fields.find(
+    (field) => field.fieldName === "cardMonthAndYear"
+  );
   const monthValue = expMonthInput.value;
   const yearValue = expYearInput.value;
   errField.validationMessage = "";
@@ -161,8 +167,10 @@ function validateMonthAndYear() {
     errField.validationMessage = "Can't be blank";
   } else if (monthValue.match(/[a-zA-Z]/gi) || yearValue.match(/[a-zA-Z]/gi)) {
     errField.validationMessage = "Wrong format, numbers only";
+  } else if (monthValue > 12) {
+    errField.validationMessage = `Expiry Month value should be between 1 and 12`;
   } else if (yearValue < expYearInput.getAttribute("min")) {
-    errField.validationMessage = `Year value should be greater than or equal to ${expYearInput.getAttribute(
+    errField.validationMessage = `Expiry Year value should be greater than or equal to ${expYearInput.getAttribute(
       "min"
     )}`;
   }
@@ -172,8 +180,10 @@ function validateMonthAndYear() {
 }
 
 function confirmClicked(eve) {
+  let noErrors = true;
   fields.forEach((field) => {
     if (field.validationMessage.length) {
+      noErrors = false;
       field.errorLabel.innerText = field.validationMessage;
       field.fieldWrapper.forEach((wrapper) => wrapper.classList.add("invalid"));
     } else {
@@ -183,4 +193,20 @@ function confirmClicked(eve) {
       );
     }
   });
+  if (noErrors) {
+    thankYouContainer.classList.remove("hidden");
+    cardDetailsForm.classList.add("hidden");
+  }
+}
+
+function continueClicked(eve) {
+  fields.forEach((fieldObject) => {
+    fieldObject.validationMessage = "Can't be blank";
+    fieldObject.field.forEach((element) => {
+      element.value = "";
+    });
+  });
+
+  thankYouContainer.classList.add("hidden");
+  cardDetailsForm.classList.remove("hidden");
 }

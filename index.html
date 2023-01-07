@@ -18,7 +18,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
-  <script src="./script.js" defer></script>
+    <script src="./script.js" defer></script>
   </head>
   <body>
     <div class="left-side">
@@ -32,7 +32,10 @@
         <p class="card-number-value">9591 6489 6389 1011</p>
         <span class="cardholder-name-value">CARDHOLDER NAME</span>
         <p class="card-expiry-date-value">
-          <span class="card-expiry-month-value">09</span>/<span class="card-expiry-year-value">00</span>
+          <span class="card-expiry-month-value">09</span>/<span
+            class="card-expiry-year-value"
+            >00</span
+          >
         </p>
       </div>
       <div class="card-back">
@@ -41,7 +44,7 @@
       </div>
     </div>
     <div class="right-side">
-      <form>
+      <form id="card-details-form">
         <label for="cardholder-name" class="field-label full-width"
           >CARDHOLDER NAME</label
         >
@@ -98,14 +101,18 @@
               required
             />
           </div>
-          <span class="error-label exp-month-year-err-label" id="exp-month-year-error-label"></span>
+          <span
+            class="error-label exp-month-year-err-label"
+            id="exp-month-year-error-label"
+          ></span>
         </div>
         <div class="input-wrapper cvc-field" id="cvc-wrapper">
           <input
             type="number"
             maxlength="3"
             minlength="3"
-            min="0"
+            min="100"
+            max="999"
             class="input-field"
             id="cvc"
             placeholder="e.g. 123"
@@ -120,6 +127,17 @@
           onclick="confirmClicked(event)"
         />
       </form>
+      <div class="thank-you-container hidden">
+        <div class="tick-mark-round"></div>
+        <p class="thank-you-text">THANK YOU!</p>
+        <p class="card-details-added-text">We've added your card details</p>
+        <input
+          type="button"
+          value="Continue"
+          class="confirm-button"
+          onclick="continueClicked(event)"
+        />
+      </div>
     </div>
     <div class="colors">
       <div class="one"></div>
@@ -127,41 +145,14 @@
       <div class="three"></div>
       <div class="four"></div>
     </div>
-    <!--
-  0000 0000 0000 0000
-  Jane Appleseed
-  00/00
-
-  000
-
-  Cardholder Name
-  e.g. Jane Appleseed
-
-  Card Number
-  e.g. 1234 5678 9123 0000
-
-  Exp. Date (MM/YY)
-  MM
-  YY
-
-  CVC
-  e.g. 123
-
-  Confirm
-  -->
-    <!-- Completed state start -->
-    <!--
-  Thank you!
-  We've added your card details
-  Continue
-  
-  <p class="attribution">
-    Challenge by
-    <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-    >Frontend Mentor</a
-    >. Coded by
-    <a href="https://github.com/paryanimohit1" target="_blank">Mohit Paryani</a>.
-  </p>
--->
+    <p class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by
+      <a href="https://github.com/paryanimohit1" target="_blank"
+        >Mohit Paryani</a
+      >.
+    </p>
   </body>
 </html>

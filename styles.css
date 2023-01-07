@@ -156,9 +156,50 @@ body .right-side form .cvc-field,
 body .right-side form .cvc-label {
   margin-left: 0.5rem;
 }
+body .right-side .confirm-button {
+  border-radius: 0.4rem;
+  background-color: hsl(278deg, 68%, 11%);
+  color: hsl(270deg, 3%, 87%);
+  border: none;
+  outline: none;
+  font-size: 16px;
+  min-height: 2.8125rem;
+  margin-top: 2.5rem;
+  cursor: pointer;
+}
+body .right-side .hidden {
+  display: none !important;
+}
+body .right-side .thank-you-container {
+  display: grid;
+  grid-template-columns: 366px;
+  place-content: center;
+  text-align: center;
+}
+body .right-side .thank-you-container .tick-mark-round {
+  width: 80px;
+  aspect-ratio: 1;
+  background-image: url("./images/tick.png");
+  background-repeat: no-repeat;
+  margin-bottom: 2.25rem;
+  place-self: center;
+}
+body .right-side .thank-you-container .thank-you-text {
+  font-size: 22px;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  color: hsl(278deg, 68%, 11%);
+}
+body .right-side .thank-you-container .card-details-added-text {
+  color: hsl(270deg, 3%, 87%);
+  font-size: 14px;
+}
 body .attribution {
   font-size: 11px;
   text-align: center;
+  bottom: 8px;
+  position: fixed;
+  width: 100%;
 }
 body .attribution a {
   color: hsl(228deg, 45%, 44%);
